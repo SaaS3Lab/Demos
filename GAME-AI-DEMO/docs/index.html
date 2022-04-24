@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Game-AI with Reinforcement Learning</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen,projection"/>
+        <link rel="stylesheet" media="screen" href="main.css" />
+        <link rel="stylesheet" media="screen" href="modal.css" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    </head>
+
+    <body>
+
+        <div id="content-wrapper" class="grey darken-4">
+            <div id="header" class="navbar-fixed">
+                <nav class="teal grey darken-4" style="height: 80px">
+                    <div class="nav-wrapper page-container">
+                        <a href="index.html" class="white-text brand-logo" style="padding-top: 0.5rem;">Game-AI Demo</a>
+                         <ul id="nav-mobile" class="right hide-on-med-and-down modal-rect">
+        <div class="section">
+                  	<input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
+      	<label for="modal-btn" style="padding-left:0">Tutorial<i class="uil uil-expand-arrows"></i></label>
+            <div class="modal2">
+                <div class="modal-wrap">
+                    <img src="./dribbble_2.webp" alt="">
+                    <p>
+                        The Demo aims to train a Game Bot AI using Reinforcement Learning dAPI with the following steps:
+    <br/>
+        (1) You can create a dAPI by clicking the 'plus' icon and choosing a dAPI type.
+        If you using a neural network, you should add at least one hidden layer with relu activation function.
+    <br/>(2) Click the selection box to choose your just created dAPI.
+    <br/>(3) Click 'play' button to train the Game Bot and the 'speed' button control the training speed.
+    <br/> Your AI-bot will learn by itself and self-evolution.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+                         </ul>
+                    </div>
+                </nav>
+            </div>
+            <div id="loader" class="preloader-wrapper active">
+                <div class="spinner-layer spinner-red-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="clientContainer" style="background: white"></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="js/FileSaver.min.js"></script>
+        <script src="client-opt.js"></script>
+        <script>
+            document.getElementsByClassName("modal-btn")[0].click();
+             const loadWeb3 = async () => {
+    if (window.ethereum) {
+      window.web3 = new Web3(window.ethereum)
+      await window.ethereum.enable()
+    } else if (window.web3) {
+      window.web3 = new Web3(window.web3.currentProvider)
+    }
+  }
+            loadWeb3();
+        </script>
+    </body>
+
+</html>
