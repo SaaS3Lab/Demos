@@ -8,6 +8,9 @@ dist
 .classpath
 .project
 /RUNNING_PID
+node_modules
+dist
+.idea
 .settings
 .DS_Store
 
